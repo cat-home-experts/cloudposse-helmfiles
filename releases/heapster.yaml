@@ -25,7 +25,7 @@ releases:
     vendor: "kubernetes"
     default: "true"
   chart: "stable/heapster"
-  version: "0.2.10"
+  version: {{ env "HEAPSTER_CHART_VERSION" | default "0.2.10" }}
   wait: true
   installed: {{ env "HEAPSTER_INSTALLED" | default "true" }}
   values:

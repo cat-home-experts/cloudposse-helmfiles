@@ -30,7 +30,7 @@ releases:
     vendor: "jetstack"
     default: "false"
   chart: "jetstack/cert-manager"
-  version: "v0.9.0"
+  version: {{ env "CERT_MANAGER_CHART_VERSION" | default "v0.9.0" }}
   wait: true
   atomic: true
   cleanupOnFail: true
@@ -157,5 +157,3 @@ releases:
             - dns01:
                 route53: {}
 {{- end }}
-
-

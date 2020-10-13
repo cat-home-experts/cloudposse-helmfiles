@@ -53,7 +53,7 @@ releases:
     component: "iam"
     namespace: "kube-system"
     default: "true"
-  version: "0.2.3"
+  version: {{ env "KIAM_CHART_VERSION" | default "0.2.3" }}
   wait: true
   force: true
   recreatePods: true
